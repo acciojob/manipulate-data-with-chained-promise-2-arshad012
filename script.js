@@ -4,7 +4,7 @@ const output = document.getElementById('output');
 function myPromise() {
 	let arr = [1,2,3,4];
 	return new Promise((resolve) => {
-		let oddNums = arr.filter((num) => num%2==1);
+		let oddNums = arr.filter((num) => num%2==0);
 		let doubledEven = [];
 		for(let el of arr) {
 			if(el%2==0) {
@@ -18,7 +18,7 @@ function myPromise() {
 myPromise()
 .then((res) => {
 	setTimeout(() => {
-		console.log("res", res);
+		// console.log("res", res);
 		output.innerText = res[0];
 		nextStep(res);
 	}, 1000);
@@ -29,9 +29,10 @@ myPromise()
 // 	}, 2000)
 // })
 function nextStep(res) {
-	console.log("res", res);
+	// console.log("res", res);
 	setTimeout(() => {
 		output.innerText = res[1];
 		nextStep(res);
 	}, 2000);
 }
+
