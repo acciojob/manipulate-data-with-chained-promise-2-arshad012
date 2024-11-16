@@ -17,22 +17,25 @@ function myPromise() {
 
 myPromise()
 .then((res) => {
-	setTimeout(() => {
-		// console.log("res", res);
-		output.innerText = res[0];
-		nextStep(res);
-	}, 1000);
+	return new Promise((resolve, reject) => {
+		setTimeout(() => {
+			output.innerText = res[0];
+			resolve(res);
+		}, 1000);
+	})
 })
-// .then((finalRes) => {
-// 	setTimeout(() => {
-// 		console.log("finalRes". finalRes);
-// 	}, 2000)
-// })
-function nextStep(res) {
-	// console.log("res", res);
+.then((finalRes) => {
 	setTimeout(() => {
-		output.innerText = res[1];
-		nextStep(res);
-	}, 2000);
-}
+		console.log("finalRes", finalRes[1]);
+		output.innerText = finalRes[1];
+	}, 2000)
+})
+// function nextStep(res) {
+// 	// console.log("res", res);
+// 	setTimeout(() => {
+// 		output.innerText = res[1];
+// 		nextStep(res);
+// 	}, 2000);
+// }
+
 
