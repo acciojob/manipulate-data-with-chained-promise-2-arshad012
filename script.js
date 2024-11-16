@@ -30,12 +30,6 @@ myPromise()
 		output.innerText = finalRes[1];
 	}, 2000)
 })
-// function nextStep(res) {
-// 	// console.log("res", res);
-// 	setTimeout(() => {
-// 		output.innerText = res[1];
-// 		nextStep(res);
-// 	}, 2000);
-// }
+
 
 
