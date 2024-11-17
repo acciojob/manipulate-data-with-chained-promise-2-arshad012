@@ -4,14 +4,14 @@ const output = document.getElementById('output');
 function myPromise() {
 	let arr = [1,2,3,4];
 	return new Promise((resolve) => {
-		let oddNums = arr.filter((num) => num%2==0);
+		let EvenNums = arr.filter((num) => num%2==0);
 		let doubledEven = [];
 		for(let el of arr) {
 			if(el%2==0) {
 				doubledEven.push(el*2);
 			}
 		}
-		setTimeout(() => resolve([oddNums, doubledEven]), 3000);
+		setTimeout(() => resolve([EvenNums, doubledEven]), 3000);
 	})
 }
 
@@ -30,6 +30,5 @@ myPromise()
 		output.innerText = finalRes[1];
 	}, 2000)
 })
-
 
 
